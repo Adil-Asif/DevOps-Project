@@ -7,6 +7,8 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
+  test:
+   - aws cloudformation package --template-file testspec.yaml --s3-bucket assignment-0123-bucket --output-template-file outputTestTemplate.yaml
   build:
     commands:
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket assignment-0123-bucket --output-template-file outputSamTemplate.yaml
